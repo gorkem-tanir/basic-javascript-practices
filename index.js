@@ -23,8 +23,8 @@ function kareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function cemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function cemberinCevresi(yaricap) {
+  return 2 * pi * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki cemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -37,8 +37,8 @@ function cemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function cemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function cemberinAlani(yaricap, pi) {
+  return pi * Math.pow(yaricap,2);
 }
 
 /* (Oto test yok) Yukarıdaki cemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -72,27 +72,63 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+enkucuk = sayilar[0];
+
+for (let i = 1; i < sayilar.length; i++) {
+	if (sayilar[i] < enkucuk) {
+		enkucuk = sayilar[i];
+	}
+}
+
+for (let i = 1; i < sayilar.length; i++) {
+	if (sayilar[i] > enbuyuk) {
+		enbuyuk = sayilar[i];
+	}
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+
+sayilar.forEach((sayi) => {
+	if (sayi % 3 === 0) {
+		ucetambolunenler.push(sayi);
+	}
+})
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, yeni) => toplam + yeni, 0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = [...besyuzdenkucuksayilar];
+siralisayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+const tekraredensayilarliste = {}
+
+for (let i = 0; i < sayilar.length; i++) {
+     let bulunmasayisi = 0;
+	 for (let s = 0; s < sayilar.length; s++) {
+         if (sayilar[s] === sayilar[i]) {
+			bulunmasayisi = bulunmasayisi + 1;
+		 }
+	 }
+	 if (bulunmasayisi  > 1) {
+		tekraredensayilarliste[`${sayilar[i]}`] = bulunmasayisi;
+	 }
+}
+
+for (let i = 0; i < Object.keys(tekraredensayilarliste).length; i++) {
+	tekraredensayilar.push(`${Object.keys(tekraredensayilarliste)[i]} sayısı ${tekraredensayilarliste[Object.keys(tekraredensayilarliste)[i]]} kere tekrar edilmiştir`)
+}
+	
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 module.exports = {
