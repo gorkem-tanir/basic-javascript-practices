@@ -113,6 +113,8 @@ siralisayilar.sort((a, b) => a - b);
 
 const tekraredensayilarliste = {}
 
+tekraredensayilar = [];
+
 for (let i = 0; i < sayilar.length; i++) {
      let bulunmasayisi = 0;
 	 for (let s = 0; s < sayilar.length; s++) {
